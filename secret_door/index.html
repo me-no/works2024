@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>かくれたトビラ - 夏のしかくい宝探し</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="sha256.js"></script>
+  </head>
+  <body>
+    <form id="form">
+      <h1></h1>
+      <p id="message">
+        <br />
+      </p>
+      <input type="password" placeholder="トビラのカギをにゅうりょく_" id="password">
+      <br />
+      <button type="submit">送信</button>
+  </form>
+    <script>
+      function hash(text) {
+        const sha = new jsSHA('SHA-256', 'TEXT');
+        sha.update(text);
+        return sha.getHash('HEX');
+      }
+      function auth(password) {
+        let capitalPass = password.toUpperCase();
+        const url = hash(capitalPass);
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', url);
+        xhr.send();
+        xhr.onload = function () {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            window.location = url;
+          } else {
+            const message = document.getElementById('message');
+            const input = document.getElementById('password');
+            message.textContent = '鍵がまちがっているようだ...';
+            input.value = '';
+          }
+        };
+        xhr.onerror = function () {
+          const message = document.getElementById('message');
+          message.innerHTML = '鍵がまちがっているようだ...';
+        };
+      }
+      const form = document.getElementById('form');
+      form.addEventListener('submit', function (event) {
+        const password = document.getElementById('password').value;
+        auth(password);
+        event.preventDefault();
+      });
+    </script>
+  </body>
+
+<style type="text/css">
+  @font-face {
+    font-family: 'MaruMonica';
+    src: url(./x12y16pxMaruMonica.ttf);
+  }
+
+  body {
+  	font-family: MaruMonica;
+    text-align: center;
+    font-size: 18px;
+    background-color: #002136;
+    color: rgb(200, 210, 240);
+    line-height: 2em;
+  }
+  h1 {
+    padding-top: 40px; 
+    opacity: 50%;
+    font-size: 16px;
+  }
+  form input {
+    font-family: MaruMonica;
+    margin: 20px 0;
+    width: 50%;
+    height: 36px;
+    border-radius: 4px;
+    color: rgb(200, 210, 240);
+    -webkit-text-fill-color: rgb(200, 210, 240);
+    background-color: rgb(10, 20, 40);
+    font-size: 16px;
+  }
+  form button {
+    background: transparent;
+    border: solid 1px #fff;
+    border-radius:4px;
+    color: #fff;
+    font-size: 16px;
+    font-family: 'MaruMonica';
+    padding: 8px 16px;
+  }
+  form button:hover {
+    background: rgba(255,255,255,0.1);
+    transition: 0.25s;
+  }
+  #message {
+    padding-top: 40px;
+  }
+</style>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GH133J8DYV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GH133J8DYV');
+</script>
+
+</html>
