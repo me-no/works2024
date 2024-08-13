@@ -13,6 +13,7 @@ let alpha,beta,gamma;
 // OS detection
 let ua = window.navigator.userAgent.toLowerCase();
 let isIOS = false;
+let isAndroid =false;
 
 // drastic sin curve
 let xspacing = scal; // Distance between each horizontal location
@@ -66,6 +67,8 @@ function setup () {
     // OS detection
     if(ua.indexOf("iphone") !== -1 || ua.indexOf("ipad") !== -1) {
         isIOS = true;
+    } else if(ua.indexOf("android") !== -1) {
+        isAndroid = true;
     }
 
     // drastic sine curve
@@ -191,8 +194,8 @@ function makeRhombus (x, y, r, color) {// xyは左上、rは大きさ、colorは
     int_x = int(mouseX/scal)*scal;
     int_y = int(mouseY/scal)*scal;
     if(gamma && beta) {
-        int_x =  int((mouseX+gamm*20)/scal)*scal;
-        int_y = int((mouseY+beta*20)/scal)*scal;
+        int_x += 20;
+        int_y += 20;
     }
     layer.image(btflyImgs[dice], int_x, int_y, btflyImgs[dice].width/4*scal, btflyImgs[dice].height/4*scal);
     dice = int(random(0, btflyImgs.length));
