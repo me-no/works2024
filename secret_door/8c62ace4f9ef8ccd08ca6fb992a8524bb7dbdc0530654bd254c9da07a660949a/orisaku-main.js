@@ -85,8 +85,8 @@ function draw () {
      * Get mouse distance from the center of sketch
     */
 
-    dX = mouseX - (width / 2.0);
-    dY = mouseY - (height / 2.0);
+    dX = mouseX - (width / 2.0)-beta;
+    dY = mouseY - (height / 2.0)-gamma;
 
     // sin curve 
     noStroke();
