@@ -144,7 +144,7 @@ function draw () {
     //text('OTAKARA discovered!', cwidth-10,cheight-28);
     fill('#EDB979');
     //textFont(font);
-    text(alpha + beta + gamma + currentMonth + '/' + currentDay +' '+currentHour + ':' + currentMin, cwidth-10, cheight-12);
+    text(int(alpha) + '/' + int(beta) + '/' + int(gamma) + '/' + currentMonth + '/' + currentDay +' '+currentHour + ':' + currentMin, cwidth-10, cheight-12);
 
 }
 
