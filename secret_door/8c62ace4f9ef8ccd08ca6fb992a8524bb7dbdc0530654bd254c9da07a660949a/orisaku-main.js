@@ -10,6 +10,10 @@ let currentTime;
 
 let alpha,beta,gamma;
 
+// OS detection
+let ua = window.navigator.userAgent.toLowerCase();
+let isIOS = false;
+
 // drastic sin curve
 let xspacing = scal; // Distance between each horizontal location
 let w; // Width of entire wave
@@ -59,8 +63,10 @@ function setup () {
     textSize(16);
     textAlign(RIGHT);
 
-    dX = mouseX - (width / 2.0)-gamma;
-    dY = mouseY - (height / 2.0)-beta;
+    // OS detection
+    if(ua.indexOf("iphone") !== -1 || ua.indexOf("ipad") !== -1) {
+        isIOS = true;
+    }
 
     // drastic sine curve
     dx = (TWO_PI / period) * xspacing;
@@ -85,8 +91,13 @@ function draw () {
      * Get mouse distance from the center of sketch
     */
 
-    dX = mouseX - (width / 2.0)+gamma*10;
-    dY = mouseY - (height / 2.0)+beta*10;
+    if(!isIOS){
+        dX = mouseX - (width / 2.0)+gamma*20;
+        dY = mouseY - (height / 2.0)+beta*20;
+    } else {
+        dX = mouseX - (width / 2.0);
+        dY = mouseY - (height / 2.0);
+    }
 
     // sin curve 
     noStroke();
