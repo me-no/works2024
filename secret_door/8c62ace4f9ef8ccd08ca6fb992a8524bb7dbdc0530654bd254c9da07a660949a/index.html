@@ -12,6 +12,9 @@
         </script>
         -->
         <meta name="viewport" content="width=device-width,initial-scale=1">
+        
+        <link rel="preload" href="../x12y16pxMaruMonica.ttf" as="font" crossorigin="anonymous" />
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">    
@@ -22,15 +25,53 @@
 
 <body>
     <div id="canvas"></div>
+    
+    <h1>でかしたニャ！</h1>
+    <h4>[遊び方]</h4>
     <ul>
         <li>クリックまたはタップで蝶が増やせます。</li>
         <li>PCの場合、右クリックで画像として保存できます。</li>
     </ul>
+    <p>.<br/>.<br/>.</p>
+
+    <div class="epilogue">
+        <h3 style="color:#20B38D;">「オオムラサキだ！」</h3>
+        <p>
+            そこにいたのは国蝶オオムラサキの群れだった。<br />
+            大きな羽根を鳥のように羽ばたかせて、耳をかすめると舞う音がする。
+        </p>
+        <p>
+            オオムラサキを見るのは初めてだった。<br />
+            都市部に姿を現さなくなったオオムラサキが飛び交う夏の景色。<br />
+            これこそがタレコミのあった宝だったのだ。
+        </p>
+        <p>.<br/>.<br/>.</p>
+    </div>
+
+    <div class="enquote">
+        <p style="font-weight:bold;">おめでとうございます！お宝発見　成功です。</p>
+        <p>上のイラストは<span style="font-weight:bold;">蝶を好きなように配置</span>して、記念に持って帰ってくださいね。<br />
+            右下に日付と時刻が表示されます。<br />
+        <span style="font-weight:bold;">SNS等で共有OKです。</span>メンションつけてくれたら見ます。</p>
+
+        <p>すべての謎の解答と解説は、イベント当日の18時以降に<br />
+            <a href="https://note.com/lyntaro/n/naf2c7b70cff9" target="_blank" style="font-weight:bold;">こちら</a>で公開予定です。</p>
+        
+        <p style="font-weight:bold;">↓お宝発見成功の感想もお聞かせください↓</p>
+    </div>
+
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSetimo56y9nKUYRQ8RqYc8C4zlBRTrqpI-CFiNc2UHGGRW73g/viewform?embedded=true" 
+        width="640" 
+        height="1124" 
+        frameborder="0" 
+        marginheight="0" 
+        marginwidth="0"
+        style="max-width:80%;">Loading…</iframe>
 </body>
 
 <style text="scss">
     #canvas {
-        margin: 80px auto;
+        margin: 40px auto;
     }
     #defaultCanvas0 {
         height:auto !important;
@@ -41,6 +82,7 @@
         src: url(../x12y16pxMaruMonica.ttf);
     }
     body{
+        margin-top:40px;
         font-family:"Pixelify Sans", MaruMonica, sans-serif;
         text-align: center;
         text-align: center;
@@ -50,14 +92,31 @@
         line-height: 1.5em;
     }
     h1 {
-        padding-top: 40px;
+        color:#fff;
+        transform: rotate(-5deg);
+        margin-bottom: 40px;
+    }
+    h4{
+        margin-bottom:16px;
     }
     ul {
         text-align:left;
-        font-size:14px;
+        font-size:18px;
+        width:fit-content;
+        margin:auto;
+    }
+    body div {
+        max-width:60%;
+        margin: auto;
+    }
+    .epilogue {
+        font-style:italic;
+    }
+    .enquote {
+        margin-top:40px;
     }
     a {
-        color: rgb(81, 197, 243);
+        color: #20B38D;
         text-decoration: none;
     }
 </style>

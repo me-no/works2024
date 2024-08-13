@@ -32,7 +32,11 @@ function preload () {
 function setup () {
     cwidth = imgbk.width/4*scal;
     cheight = imgbk.height/4*scal;
-    createCanvas(cwidth,cheight);
+    canvas = createCanvas(cwidth,cheight);
+
+    // change canvas position
+    canvas.parent('canvas');
+
     background(208,233,234);
     dice = int(random(0,btflyImgs.length));
 
@@ -105,7 +109,9 @@ function draw () {
     image(btflyImgs[dice],mouseX,mouseY,btflyImgs[dice].width/4*scal,btflyImgs[dice].height/4*scal);
 
     // layer
-    image(layer, 0, 0);
+    push();
+    image(layer, dX/50, dY/50);
+    pop();
 
     push();
     translate(dX/40, dY/40);
