@@ -191,6 +191,10 @@ function makeRhombus (x, y, r, color) {// xyは左上、rは大きさ、colorは
     int_x = int(mouseX/scal)*scal;
     int_y = int(mouseY/scal)*scal;
     //console.log(btflyImgs[dice]);
+    if(!isIOS){
+        int_x += gamma*20;
+        int_y += beta*20;
+    }
     layer.image(btflyImgs[dice], int_x, int_y, btflyImgs[dice].width/4*scal, btflyImgs[dice].height/4*scal);
     //layer.image(bt1,int_x,int_y,2*scal,2*scal);
     dice = int(random(0, btflyImgs.length));
