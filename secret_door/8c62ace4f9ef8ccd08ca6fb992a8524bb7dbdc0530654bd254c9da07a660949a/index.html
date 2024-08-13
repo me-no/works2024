@@ -25,7 +25,7 @@
 
 <body>
     <div id="canvas"></div>
-    
+
     <h1>でかしたニャ！</h1>
     <h4>[遊び方]</h4>
     <ul>
@@ -66,7 +66,7 @@
         frameborder="0" 
         marginheight="0" 
         marginwidth="0"
-        style="max-width:80%;">Loading…</iframe>
+    >Loading…</iframe>
 </body>
 
 <style text="scss">
@@ -105,9 +105,12 @@
         width:fit-content;
         margin:auto;
     }
-    body div {
+    .epilogue, .enquote {
         max-width:60%;
         margin: auto;
+        @media screen and (max-width:424px) {
+            max-width:100%;
+        }
     }
     .epilogue {
         font-style:italic;
@@ -118,6 +121,12 @@
     a {
         color: #20B38D;
         text-decoration: none;
+    }
+    iframe {
+        max-width:80%;
+        @media screen and (max-width:424px) {
+            max-width:100%;
+        }
     }
 </style>
 
