@@ -8,6 +8,8 @@ let dice;
 
 let currentTime;
 
+let alpha,beta,gamma;
+
 // drastic sin curve
 let xspacing = scal; // Distance between each horizontal location
 let w; // Width of entire wave
@@ -16,6 +18,20 @@ let amplitude; // Height of wave
 let period = 180.0; // How many pixels before the wave repeats
 let dx; // Value for incrementing x
 let yvalues; // Using an array to store height values for the wave
+
+
+// 加速度センサーイベント処理
+window.addEventListener("deviceorientation", function (e) {
+    // alpha, beta, gammaの値を取得
+    alpha = e.alpha;
+    beta = e.beta;
+    gamma = e.gamma;
+
+    //傾き
+    //const movePosition = new MovePosition(alpha, beta, gamma);
+    //movePosition.setImgPositon();
+
+}, false);
 
 
 function preload () {
@@ -43,6 +59,9 @@ function setup () {
     textSize(16);
     textAlign(RIGHT);
 
+    dX = mouseX - (width / 2.0)-gamma;
+    dY = mouseY - (height / 2.0)-beta;
+
     // drastic sine curve
     dx = (TWO_PI / period) * xspacing;
     w =  cwidth + xspacing;
@@ -66,8 +85,8 @@ function draw () {
      * Get mouse distance from the center of sketch
     */
 
-    let dX = mouseX - (width / 2.0);
-    let dY = mouseY - (height / 2.0);
+    dX = mouseX - (width / 2.0);
+    dY = mouseY - (height / 2.0);
 
     // sin curve 
     noStroke();
@@ -125,7 +144,7 @@ function draw () {
     //text('OTAKARA discovered!', cwidth-10,cheight-28);
     fill('#EDB979');
     //textFont(font);
-    text(currentMonth + '/' + currentDay +' '+currentHour + ':' + currentMin, cwidth-10, cheight-12);
+    text(alpha + beta + gamma + currentMonth + '/' + currentDay +' '+currentHour + ':' + currentMin, cwidth-10, cheight-12);
 
 }
 
@@ -166,3 +185,10 @@ function makeRhombus (x, y, r, color) {// xyは左上、rは大きさ、colorは
     dice = int(random(0, btflyImgs.length));
 
   }
+
+/*
+  function deviceMoved() {
+    dX += pAccelerationX;
+    dY += pAccelerationY;
+  }
+*/
