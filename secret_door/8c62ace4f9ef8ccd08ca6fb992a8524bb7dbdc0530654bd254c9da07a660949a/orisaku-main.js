@@ -85,18 +85,18 @@ function setup () {
 
 function draw () {
     currentTime = new Date();
-    currentMonth = currentTime.getMonth();
-    currentDay = currentTime.getDay();
-    currentHour = currentTime.getHours();
-    currentMin = currentTime.getMinutes();
+    currentMonth = currentTime.getMonth().toString().padStart(2, '0');;
+    currentDay = currentTime.getDay().toString().padStart(2, '0');;
+    currentHour = currentTime.getHours().toString().padStart(2, '0');;
+    currentMin = currentTime.getMinutes().toString().padStart(2, '0');;
 
     /**
      * Get mouse distance from the center of sketch
     */
 
     if(!isIOS){
-        dX = mouseX - (width / 2.0)+gamma*20;
-        dY = mouseY - (height / 2.0)+beta*20;
+        dX = mouseX - (width / 2.0)+gamma*5;
+        dY = mouseY - (height / 2.0)+beta*5;
     } else {
         dX = mouseX - (width / 2.0);
         dY = mouseY - (height / 2.0);
