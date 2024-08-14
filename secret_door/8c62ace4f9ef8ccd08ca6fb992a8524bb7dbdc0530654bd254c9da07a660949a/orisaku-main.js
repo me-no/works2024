@@ -95,8 +95,8 @@ function draw () {
     */
 
     if(!isIOS){
-        dX = mouseX - (width / 2.0)+gamma*5;
-        dY = mouseY - (height / 2.0)+beta*5;
+        dX = mouseX - (width / 2.0)+gamma*10;
+        dY = mouseY - (height / 2.0)+beta*10;
     } else {
         dX = mouseX - (width / 2.0);
         dY = mouseY - (height / 2.0);
