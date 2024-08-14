@@ -85,8 +85,8 @@ function setup () {
 
 function draw () {
     currentTime = new Date();
-    currentMonth = currentTime.getMonth().toString().padStart(2, '0');;
-    currentDay = currentTime.getDay().toString().padStart(2, '0');;
+    currentMonth = (currentTime.getMonth() + 1).toString().padStart(2, '0');;// 0が1月なので1足す
+    currentDate = currentTime.getDate().toString().padStart(2, '0');;
     currentHour = currentTime.getHours().toString().padStart(2, '0');;
     currentMin = currentTime.getMinutes().toString().padStart(2, '0');;
 
@@ -158,7 +158,8 @@ function draw () {
     //text('OTAKARA discovered!', cwidth-10,cheight-28);
     fill('#EDB979');
     //textFont(font);
-    text(int(alpha) + '/' + int(beta) + '/' + int(gamma) + '/' + currentMonth + '/' + currentDay +' '+currentHour + ':' + currentMin, cwidth-10, cheight-12);
+    //text(int(alpha) + '/' + int(beta) + '/' + int(gamma) + '/' + currentMonth + '/' + currentDate +' '+currentHour + ':' + currentMin, cwidth-10, cheight-12);
+    text(currentMonth + '/' + currentDate +' '+currentHour + ':' + currentMin, cwidth-10, cheight-12);
 
 }
 
