@@ -40,7 +40,8 @@ window.addEventListener("deviceorientation", function (e) {
 
 
 function preload () {
-    imgbk = loadImage("btfly-bk.png");
+    imgbk = loadImage("back.png");
+    imgtwin =loadImage("twins.png");
     sasakia = loadImage("oomurasaki.png");
     for(let i =0;i<8;i++) {
         j = i+1;
@@ -122,21 +123,17 @@ function draw () {
     rhombusx = int(random(-rhombusr, cwidth)/scal)*scal;
     rhombusy = int(random(-rhombusr, cheight)/scal)*scal;
     rcolors = [255,255,255,100];
-    if(count==6){
+    if(count==4){
         makeRhombus(rhombusx, rhombusy, rhombusr, rcolors);
         count=0;
     }
     count++;
 
-    // mask with rectangle
-    fill(208,233,234);
-    rect(0,0,10*scal,cheight);
-    rect(0, cwidth-10*scal, cwidth, 10*scal);
-    rect(cwidth-10*scal, cheight/2, 10*scal, cheight/2);
+    image(imgbk, 0, 0, cwidth, cheight);
 
     push();
     translate(dX / 80, dY / 80);
-    image(imgbk,0,0,cwidth,cheight);
+    image(imgtwin,0,0,cwidth,cheight);
     pop();
 
     image(btflyImgs[dice],mouseX,mouseY,btflyImgs[dice].width/4*scal,btflyImgs[dice].height/4*scal);
