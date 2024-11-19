@@ -1,0 +1,110 @@
+#canvas {
+    margin: 40px auto;
+}
+#defaultCanvas0 {
+    height:auto !important;
+    max-width:100%;
+}
+@font-face {
+    font-family: 'MaruMonica';
+    src: url(./x12y16pxMaruMonica.ttf);
+}
+
+body {
+    font-family: MaruMonica, "Pixelify Sans", sans-serif;
+    font-size:16px;
+    text-align: center;
+    background-color: #002136;
+    color: rgb(200, 210, 240);
+    line-height: 2em;
+    margin-bottom:40vh;
+}
+a {
+    text-decoration:none;
+    color:#20B38D;
+}
+h1 {
+    padding-top: 40px; 
+    opacity: 50%;
+    font-size:36px;
+}
+h3,h4 {
+    margin:0 auto;
+}
+.cat-says {
+    color:#20B38D;
+}
+
+.img-wrapper {
+    img {
+        width:60%;
+    }
+}
+.caption {
+    margin-bottom:20px;
+    margin-top:-10px;
+    font-size:12px;
+}
+.main {
+    width:60%;
+    margin:auto;
+    @media screen and (orientation:portrait) {
+    width:90%;
+    }
+}
+.question{
+    text-align: left;
+    border: solid;
+    padding: 8px 16px;
+}
+.menu-wrapper {
+    display:flex;
+    flex-direction:column;
+    margin-bottom:40px;
+    a {
+        text-decoration:none;
+        color:inherit;
+        font-size:20px;
+        width:fit-content;
+        margin: auto;
+        margin-bottom:1rem;
+        position:relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: rgb(200, 210, 240);
+            bottom: -4px;
+            left: 0;
+            transform-origin: right;
+            transform: scaleX(0);
+            transition: transform .3s ease-in-out;
+        }
+
+        &:hover::before {
+            transform-origin: left;
+            transform: scaleX(1);
+        }
+    }
+}
+
+footer div {
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    color:rgba(255,255,255,0.7);
+    font-size:10px;
+    font-weight:bold;
+    height:3rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background-color:#002136;
+}
+footer div a {
+    padding:4px;
+    color:#fff;
+}

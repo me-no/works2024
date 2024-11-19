@@ -1,0 +1,47 @@
+#canvas {
+    position:relative;
+}
+#tanuki {
+    position:absolute;
+    bottom:80px;
+    left:calc(50% - 80px);
+    @media screen and (orientation:portrait) {
+        bottom:32px;
+    }
+}
+
+.text-wrapper {
+    line-height:1rem;
+    text-align:left;
+    width:fit-content;
+    margin: -64px auto 80px auto;
+    @media screen and (orientation:portrait) {
+        margin:-40px auto 64px auto; 
+    }
+}
+
+.fadein {
+  opacity:0;
+  animation-name: fadein;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  font-size:36px;
+  align-items:center;
+  text-align:center;
+}
+.fadein img {
+  width:64px;
+  @media screen and (orientation:portrait) {
+    width:48px;
+  }
+}
+
+@keyframes fadein {
+  0% {
+     opacity: 0;
+  }
+  100% {
+     opacity: 1;
+  }
+}

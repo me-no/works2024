@@ -1,0 +1,160 @@
+<html>
+    <head>
+        <!--
+        <script>
+            // 認可Cookieを持っていなければ，リダイレクト
+            let thecookie = document.cookie.split(';').find((el) => el==='pdp24_tanuki=saw');
+            console.log(thecookie);
+            if (!thecookie) {
+                location.href="/pdp24/catatata24/";
+                console.log('redirected');
+            } else {
+                console.log('passed');
+            }
+        </script>
+        -->
+
+        <!-- Google tag (gtag.js) -->
+        <!--
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-5WQMJJPV77"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-5WQMJJPV77');
+        </script>
+        -->
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        
+        <link rel="preload" href="../x12y16pxMaruMonica.ttf" as="font" crossorigin="anonymous" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+        <title>はっけん | ネコさがし - さよならさんすう</title>
+
+        <link rel="stylesheet" type="text/css" href="./ca24.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    </head>
+
+<script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
+
+<body>
+    <div class="scroll-element">
+        <img src="./findcat1.png" />
+    </div>
+
+    <div class="scroll-element js-scroll fade-in-bottom">
+        <p class="cat-says">「こんなところにいたのニャ。さんざん探したのニャ。」</p>
+        <img class="cat-says scroll-element js-scroll fade-in-bottom" src="./findcat2.png" />
+    </div>
+
+    <div class="scroll-element js-scroll fade-in-bottom">
+        <div class="">
+            <p class="">「よく全部解いたよねぇ。」</p>
+            <p class="cat-says">「そこに謎があるからなのニャ。」</p>
+        </div>
+        <img class="cat-says scroll-element js-scroll fade-in-bottom" src="./findcat3.png" />
+    </div>
+
+    <div class="enquote">
+        <p style="font-weight:bold;">↓良ければ感想もお聞かせください↓</p>
+    </div>
+
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSetimo56y9nKUYRQ8RqYc8C4zlBRTrqpI-CFiNc2UHGGRW73g/viewform?embedded=true" 
+        width="640" 
+        height="1124" 
+        frameborder="0" 
+        marginheight="0" 
+        marginwidth="0"
+    >Loading…</iframe>
+</body>
+
+<footer>
+    <div>2024 by <a href="https://menopixel.net" target="_blank">menopixel.net</a></div>
+</footer>
+
+<script src="./fadein.js"></script>
+
+<style text="scss">
+    @font-face {
+        font-family: 'MaruMonica';
+        src: url(../x12y16pxMaruMonica.ttf);
+    }
+    body{
+        margin-top:40px;
+        font-family:"Pixelify Sans", MaruMonica, sans-serif;
+        text-align: center;
+        text-align: center;
+        font-size: 16px;
+        color: #002136;
+        line-height: 1.5em;
+
+        display:none;
+    }
+    .scroll-element img {
+        width:80%;
+        @media screen and (orientation:portrait) {
+            width:90%;
+        }
+    }
+    .cat-says {
+        color:#20B38D;
+    }
+    ul {
+        text-align:left;
+        font-size:18px;
+        width:fit-content;
+        margin:auto;
+    }
+    .enquote {
+        max-width:60%;
+        margin: auto;
+        @media screen and (orientation:portrait) {
+            max-width:100%;
+        }
+    }
+    .enquote {
+        margin-top:40px;
+    }
+    a {
+        color: #20B38D;
+        text-decoration: none;
+    }
+    iframe {
+        max-width:80%;
+        @media screen and (orientation:portrait) {
+            max-width:100%;
+        }
+    }
+
+    footer div {
+        position:fixed;
+        bottom:0;
+        left:0;
+        width:100%;
+        font-size:10px;
+        font-weight:bold;
+        height:3rem;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    }
+    footer div a {
+        padding:4px;
+    }
+</style>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GH133J8DYV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GH133J8DYV');
+</script>
+
+</html>
