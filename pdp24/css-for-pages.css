@@ -23,6 +23,10 @@ a {
     text-decoration:none;
     color:#20B38D;
 }
+.back-btn {
+    color:inherit;
+    text-decoration:underline;
+}
 h1 {
     padding-top: 40px; 
     opacity: 50%;
