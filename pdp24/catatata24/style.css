@@ -2,11 +2,15 @@
     position:relative;
 }
 #tanuki {
-    position:absolute;
-    bottom:80px;
-    left:calc(50% - 80px);
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:fit-content;
+    justify-content:center;
+    color:#20B38D;
     @media screen and (orientation:portrait) {
-        bottom:32px;
+        bottom:40px;
     }
 }
 
@@ -40,8 +44,10 @@
 @keyframes fadein {
   0% {
      opacity: 0;
+     transform:translateY(0);
   }
   100% {
      opacity: 1;
+     transform:translateY(80px);
   }
 }
