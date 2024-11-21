@@ -2,8 +2,8 @@
     position:relative;
 }
 #tanuki {
-    position:fixed;
-    top:0;
+    position:absolute;
+    bottom:20%;
     left:0;
     width:100%;
     height:fit-content;
@@ -44,10 +44,10 @@
 @keyframes fadein {
   0% {
      opacity: 0;
-     transform:translateY(0);
+     transform:translateY(-80px);
   }
   100% {
      opacity: 1;
-     transform:translateY(80px);
+     transform:translateY(0px);
   }
 }
